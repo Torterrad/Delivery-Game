@@ -8,6 +8,9 @@ public class CarBoost : MonoBehaviour
 
     public float boostAmount;
     public float boostAmountMax = 1000f;
+    public float boostDecrease = 1f;
+    public float boostIncrease = 200f;
+
     public float accFactorBoost = 100f;
     public float maxSpeedBoost = 40f;
     public float accFactorStart;
@@ -28,9 +31,9 @@ public class CarBoost : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (boostAmount >= 1)
+            if (boostAmount >= boostDecrease)
             {
-                boostAmount--;
+                boostAmount -= boostDecrease;
 
                 GetComponent<CarController>().accFactor = accFactorBoost;
                 GetComponent<CarController>().maxSpeed = maxSpeedBoost;
@@ -47,6 +50,17 @@ public class CarBoost : MonoBehaviour
         if (boostAmount > boostAmountMax)
         {
             boostAmount = boostAmountMax;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "BoostPack")
+        {
+            boostAmount += boostIncrease;
+            boostBar.SetBoost(boostAmount);
+
+            other.gameObject.SetActive(false);
         }
     }
 }

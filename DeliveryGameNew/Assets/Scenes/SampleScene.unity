@@ -142,7 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostBar: {fileID: 1631441889}
   boostAmount: 0
-  boostAmountMax: 10
+  boostAmountMax: 1000
+  boostDecrease: 1
+  boostIncrease: 200
   accFactorBoost: 100
   maxSpeedBoost: 40
   accFactorStart: 0
@@ -1433,7 +1435,6 @@ GameObject:
   - component: {fileID: 2050553373}
   - component: {fileID: 2050553372}
   - component: {fileID: 2050553374}
-  - component: {fileID: 2050553375}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1498,15 +1499,60 @@ MonoBehaviour:
   amountOfTimeRemoved: 1
   amountOfTimeAddedLock: 2
   text: {fileID: 398865855}
---- !u!114 &2050553375
-MonoBehaviour:
+--- !u!1001 &7256395835802151154
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050553371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467fd87914d274246abe8df32a03b00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646441094595411302, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017092789787108978, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
+      propertyPath: m_Name
+      value: BoostPack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a31afaabfc499af41b779dc7e388a341, type: 3}
