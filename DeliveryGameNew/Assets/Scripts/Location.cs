@@ -5,11 +5,13 @@ using UnityEngine;
 public class Location : MonoBehaviour
 {
     public GameObject manager;
+    public GameObject arrow;
    
     
     void Start()
     {
         manager = GameObject.Find("GameManager");
+        arrow = GameObject.Find("Arrow");
         
     }
 
@@ -19,12 +21,17 @@ public class Location : MonoBehaviour
         if (this.tag == "Pick Up" && other.tag == "Player")
         {
             manager.GetComponent<SpawnPickup>().needToDropOff = true;
+            
+            arrow.GetComponent<ArrowController>().lookingForPickup = false;
+            arrow.GetComponent<ArrowController>().lookingForDropOff = true;
             Destroy(gameObject);
         }
         if (this.tag == "Drop Off" && other.tag == "Player")
         {
 
-            if(manager.GetComponent<Timer>().amountOfTimeAdded<= manager.GetComponent<Timer>().amountOfTimeAddedLock)
+            arrow.GetComponent<ArrowController>().lookingForDropOff = false;
+            arrow.GetComponent<ArrowController>().lookingForPickup = true;
+            if (manager.GetComponent<Timer>().amountOfTimeAdded<= manager.GetComponent<Timer>().amountOfTimeAddedLock)
             {
                 manager.GetComponent<Timer>().amountOfTimeAdded = manager.GetComponent<Timer>().amountOfTimeAddedLock;
                 manager.GetComponent<Timer>().timeAmount += manager.GetComponent<Timer>().amountOfTimeAdded;
