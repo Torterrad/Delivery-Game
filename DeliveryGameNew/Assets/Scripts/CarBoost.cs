@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CarBoost : MonoBehaviour
 {
+    public BoostBar boostBar;
+
     public float boostAmount;
-    public float boostAmountMax = 100f;
+    public float boostAmountMax = 1000f;
     public float accFactorBoost = 100f;
     public float maxSpeedBoost = 40f;
     public float accFactorStart;
@@ -15,6 +17,7 @@ public class CarBoost : MonoBehaviour
     void Start()
     {
         boostAmount = boostAmountMax;
+        boostBar.SetMaxBoost(boostAmountMax);
 
         accFactorStart = GetComponent<CarController>().accFactor;
         maxSpeedStart = GetComponent<CarController>().maxSpeed;
@@ -25,8 +28,15 @@ public class CarBoost : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            GetComponent<CarController>().accFactor = accFactorBoost;
-            GetComponent<CarController>().maxSpeed = maxSpeedBoost;
+            if (boostAmount >= 1)
+            {
+                boostAmount--;
+
+                GetComponent<CarController>().accFactor = accFactorBoost;
+                GetComponent<CarController>().maxSpeed = maxSpeedBoost;
+
+                boostBar.SetBoost(boostAmount);
+            }
         }
         else
         {
