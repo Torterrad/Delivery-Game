@@ -254,7 +254,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.672369
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 679237948}
-  smoothing: 0
+  smoothing: 0.1
 --- !u!1 &635965154
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 907169125}
   pickUpObject: {fileID: 3536015991907068743, guid: 4e8a8f69ad2535c4b94b2e7f1b761fef, type: 3}
   dropOffLocation: {fileID: 4504678521178828619, guid: c53ee6a21feffbb4cad149470db8ab8e, type: 3}
-  needAJob: 0
+  needAJob: 1
   needToDropOff: 0
 --- !u!4 &2050553373
 Transform:
