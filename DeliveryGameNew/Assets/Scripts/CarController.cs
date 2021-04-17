@@ -20,13 +20,22 @@ public class CarController : MonoBehaviour
 
     Rigidbody2D carRb;
 
+    
+
     private void Awake()
     {
         carRb = GetComponent<Rigidbody2D>();
     }
     private void Start()
     {
-        ScreenShakeController.instance.StartShake(.2f, 5f);
+        
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            CinemachineShake.Instance.ShakeCamera(5f, .1f);
+        }
     }
 
     private void FixedUpdate()
@@ -34,10 +43,7 @@ public class CarController : MonoBehaviour
         EngineForce();
         DampenMovement();
         Steering();
-        if (Input.GetKey(KeyCode.Q))
-        {
-            ScreenShakeController.instance.StartShake(1f, .1f);
-        }
+        
     }
 
     void EngineForce()
