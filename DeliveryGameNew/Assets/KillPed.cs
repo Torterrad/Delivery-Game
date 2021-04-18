@@ -14,7 +14,7 @@ public class KillPed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player"&& player.GetComponent<CarController>().speed>=15)
+        if (other.tag == "Player"&& player.GetComponent<CarController>().speed>=10)
         {
             manager.GetComponent<SpawnPickup>().needToDropOff = true;
             manager.GetComponent<Timer>().timeAmount -= 10;

@@ -12950,6 +12950,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4229053243368606223, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
+      propertyPath: accFactor
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229053243368606223, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
+      propertyPath: driftFactor
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229053243368606223, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
       propertyPath: exhaustSmoke
       value: 
       objectReference: {fileID: 1813874911}
