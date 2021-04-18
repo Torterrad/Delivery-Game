@@ -21,7 +21,9 @@ public class CarController : MonoBehaviour
 
     Rigidbody2D carRb;
 
-    
+    public ParticleSystem exhaustSmoke;
+
+
 
     private void Awake()
     {
@@ -76,6 +78,11 @@ public class CarController : MonoBehaviour
         }
 
         Vector2 forceVector = transform.up * accInput * accFactor;
+
+        if (accInput > 0)
+        {
+            exhaustSmoke.Play();
+        }
 
         carRb.AddForce(forceVector, ForceMode2D.Force);
     }
