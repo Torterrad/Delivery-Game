@@ -128,27 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4229053243368606209, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
   m_PrefabInstance: {fileID: 679237947}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &45957289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45957288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7e197f1b7b3e9a43b7bb514e607f9ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boostBar: {fileID: 1631441889}
-  boostAmount: 0
-  boostAmountMax: 1000
-  boostDecrease: 1
-  boostIncrease: 200
-  accFactorBoost: 100
-  maxSpeedBoost: 40
-  accFactorStart: 0
-  maxSpeedStart: 0
 --- !u!1 &206786026
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +558,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8391955570065896263, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
+      propertyPath: boostBar
+      value: 
+      objectReference: {fileID: 1631441889}
     - target: {fileID: 4229053243368606209, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
       propertyPath: m_Name
       value: Car
