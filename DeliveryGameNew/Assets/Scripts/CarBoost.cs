@@ -11,10 +11,11 @@ public class CarBoost : MonoBehaviour
     public float boostDecrease = 1f;
     public float boostIncrease = 200f;
 
+    public CarController carController;
     public float accFactorBoost = 100f;
     public float maxSpeedBoost = 40f;
-    public float accFactorStart;
-    public float maxSpeedStart;
+    float accFactorStart;
+    float maxSpeedStart;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,8 @@ public class CarBoost : MonoBehaviour
         boostAmount = boostAmountMax;
         boostBar.SetMaxBoost(boostAmountMax);
 
-        accFactorStart = GetComponent<CarController>().accFactor;
-        maxSpeedStart = GetComponent<CarController>().maxSpeed;
+        accFactorStart = carController.accFactor;
+        maxSpeedStart = carController.maxSpeed;
     }
 
     // Update is called once per frame
@@ -34,17 +35,17 @@ public class CarBoost : MonoBehaviour
             if (boostAmount >= boostDecrease)
             {
                 boostAmount -= boostDecrease;
-
-                GetComponent<CarController>().accFactor = accFactorBoost;
-                GetComponent<CarController>().maxSpeed = maxSpeedBoost;
-
                 boostBar.SetBoost(boostAmount);
+
+                //carController.accInput = 1f;//Car moves forward.
+                carController.accFactor = accFactorBoost;
+                carController.maxSpeed = maxSpeedBoost;
             }
         }
         else
         {
-            GetComponent<CarController>().accFactor = accFactorStart;
-            GetComponent<CarController>().maxSpeed = maxSpeedStart;
+            carController.accFactor = accFactorStart;
+            carController.maxSpeed = maxSpeedStart;
         }
 
         if (boostAmount > boostAmountMax)
