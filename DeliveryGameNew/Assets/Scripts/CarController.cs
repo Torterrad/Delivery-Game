@@ -9,6 +9,7 @@ public class CarController : MonoBehaviour
     public float turnFactor = 3.5f;
     public float driftFactor = 0.95f;
     public float maxSpeed = 20;
+    public float speed;
 
 
     float accInput = 0;
@@ -48,8 +49,9 @@ public class CarController : MonoBehaviour
 
     void EngineForce()
     {
+        
         VelocityUp = Vector2.Dot(transform.up, carRb.velocity);
-
+        speed = VelocityUp;
         if(VelocityUp > maxSpeed && accInput > 0)
         {
             return;
