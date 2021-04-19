@@ -103,6 +103,29 @@ public class CarController : MonoBehaviour
         accInput = inputVec.y;
     }
 
+    float GetLateralVelocity()
+    {
+        return Vector2.Dot(transform.right, carRb.velocity);
+    }
+
+    public bool isCarDrifting(out float lateralVelocity, out bool isBreaking)
+    {
+        lateralVelocity = GetLateralVelocity();
+        isBreaking = false;
+
+        if(accInput < 0 && VelocityUp > 0)
+        {
+            isBreaking = true;
+            return true;
+        }
+        if(Mathf.Abs(GetLateralVelocity())> 4.0f)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     void DampenMovement()
     {
         Vector2 forwardVelocity = transform.up * Vector2.Dot(carRb.velocity, transform.up);
