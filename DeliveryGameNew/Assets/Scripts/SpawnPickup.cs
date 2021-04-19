@@ -12,6 +12,7 @@ public class SpawnPickup : MonoBehaviour
     public bool needAJob;
     public bool needToDropOff = false;
 
+    public MessageScript message;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +26,16 @@ public class SpawnPickup : MonoBehaviour
         if (needAJob)
         {
             SpawnPickUp();
+
+
             needAJob = false;
         }
         if (needToDropOff)
         {
             SpawnDropOff();
+
+            message.PrintJob();
+
             needToDropOff = false;
         }
     }
