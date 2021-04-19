@@ -17818,6 +17818,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1631441889}
     - target: {fileID: -8391955570065896263, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
+      propertyPath: boostDecrease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391955570065896263, guid: 6c3a7d2d3da8a99418a504f00c534df1, type: 3}
       propertyPath: accFactorBoost
       value: 50
       objectReference: {fileID: 0}

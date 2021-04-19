@@ -30,22 +30,17 @@ public class CarBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (boostAmount >= boostDecrease)
-            {
-                boostAmount -= boostDecrease;
-                boostBar.SetBoost(boostAmount);
+        carController.accFactor = accFactorStart;
+        carController.maxSpeed = maxSpeedStart;
 
-                //carController.accInput = 1f;//Car moves forward.
-                carController.accFactor = accFactorBoost;
-                carController.maxSpeed = maxSpeedBoost;
-            }
-        }
-        else
+        if (Input.GetKey(KeyCode.Space) && boostAmount >= boostDecrease)
         {
-            carController.accFactor = accFactorStart;
-            carController.maxSpeed = maxSpeedStart;
+            boostAmount -= boostDecrease;
+            boostBar.SetBoost(boostAmount);
+
+            //carController.accInput = 1f;//Car moves forward.
+            carController.accFactor = accFactorBoost;
+            carController.maxSpeed = maxSpeedBoost;
         }
 
         if (boostAmount > boostAmountMax)
