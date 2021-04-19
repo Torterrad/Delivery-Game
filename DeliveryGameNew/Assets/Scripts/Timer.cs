@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public float amountOfTimeAdded = 5f;
     public float amountOfTimeRemoved = 1f;
     public float amountOfTimeAddedLock = 2f;
+
+    public int ordersCompleted;
     public TextMeshProUGUI text;
 
     // Update is called once per frame
