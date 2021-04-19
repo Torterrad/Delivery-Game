@@ -41,6 +41,7 @@ public class Location : MonoBehaviour
                 manager.GetComponent<Timer>().timeAmount += manager.GetComponent<Timer>().amountOfTimeAdded;
                 manager.GetComponent<Timer>().amountOfTimeAdded -= manager.GetComponent<Timer>().amountOfTimeRemoved;
             }
+            manager.GetComponent<Timer>().ordersCompleted += 1;
             manager.GetComponent<SpawnPickup>().needAJob = true;
             Destroy(gameObject);
         }
