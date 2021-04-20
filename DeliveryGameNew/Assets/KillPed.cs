@@ -40,7 +40,7 @@ public class KillPed : MonoBehaviour
         {
             blood.Play();
             
-            manager.GetComponent<SpawnPickup>().needToDropOff = true;
+            //manager.GetComponent<SpawnPickup>().needToDropOff = true;
             manager.GetComponent<Timer>().timeAmount -= 10;
             dead = true;
             //gameObject.SetActive(false);
