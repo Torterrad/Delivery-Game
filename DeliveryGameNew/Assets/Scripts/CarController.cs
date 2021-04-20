@@ -21,7 +21,15 @@ public class CarController : MonoBehaviour
 
     Rigidbody2D carRb;
 
+    public CarBoost carBoost;
+    public float accFactorBoost = 100f;
+    public float maxSpeedBoost = 40f;
+    float accFactorStart;
+    float maxSpeedStart;
+
+
     public ParticleSystem exhaustSmoke;
+    public ParticleSystem boostSmoke;
 
 
 
@@ -31,13 +39,23 @@ public class CarController : MonoBehaviour
     }
     private void Start()
     {
-        
+        accFactorStart = accFactor;
+        maxSpeedStart = maxSpeed;
     }
     private void Update()
     {
         if (Input.GetKey(KeyCode.Q))
         {
             CinemachineShake.Instance.ShakeCamera(5f, .1f);
+        }
+
+        accFactor = accFactorStart;
+        maxSpeed = maxSpeedStart;
+
+        if (Input.GetKey(KeyCode.Space) && carBoost.boostAmount >= carBoost.boostDecrease)
+        {
+            accFactor = accFactorBoost;
+            maxSpeed = maxSpeedBoost;
         }
     }
 
@@ -77,12 +95,19 @@ public class CarController : MonoBehaviour
             carRb.drag = 0;
         }
 
-        Vector2 forceVector = transform.up * accInput * accFactor;
-
-        if (accInput > 0)
+        if (Input.GetKey(KeyCode.Space) && carBoost.boostAmount >= carBoost.boostDecrease)
+        {
+            accInput = 1;
+            boostSmoke.Play();
+        }
+        else if (accInput > 0)
         {
             exhaustSmoke.Play();
         }
+
+        Vector2 forceVector = transform.up * accInput * accFactor;
+
+        
 
         carRb.AddForce(forceVector, ForceMode2D.Force);
     }
