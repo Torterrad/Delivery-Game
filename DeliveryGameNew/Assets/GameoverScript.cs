@@ -20,6 +20,7 @@ public class GameoverScript : MonoBehaviour
 
     public void Gameover()
     {
+        Time.timeScale = 0f;
         Background.SetActive(true);
         GameOverMessage.SetActive(true);
         HUD.SetActive(false);
