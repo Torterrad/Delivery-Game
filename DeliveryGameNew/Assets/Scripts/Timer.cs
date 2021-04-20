@@ -14,16 +14,19 @@ public class Timer : MonoBehaviour
     public int ordersCompleted;
     public TextMeshProUGUI text;
 
+    public GameObject Menus;
+
     // Update is called once per frame
     void Update()
     {
-        if(timeAmount > 0)
+        if(timeAmount >= 0)
         {
             timeAmount -= Time.deltaTime;
         }
         else if (timeAmount <= 0)
         {
             timeAmount = 0;
+            Menus.GetComponent<GameoverScript>().Gameover();
         }
         DisplayTime(timeAmount);
     }
