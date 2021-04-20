@@ -20,20 +20,20 @@ public class GameoverScript : MonoBehaviour
 
     public void Gameover()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 0.1f;
         Background.SetActive(true);
         GameOverMessage.SetActive(true);
         HUD.SetActive(false);
-        Invoke("results", 1.0f);
+        Invoke("Results", 0.1f);
     }
 
     public void Results()
     {
-        //Grab Scores() 
-
-        //Disable Gameover message
         GameOverMessage.SetActive(false);
-        //Enable Results screen
+        Time.timeScale = 0f;
+
+        GrabScores();
+        
         Result.SetActive(true);
 
     }
