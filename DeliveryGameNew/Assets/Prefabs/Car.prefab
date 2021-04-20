@@ -106,7 +106,11 @@ MonoBehaviour:
   driftFactor: 0.95
   maxSpeed: 15
   speed: 0
+  carBoost: {fileID: 0}
+  accFactorBoost: 100
+  maxSpeedBoost: 40
   exhaustSmoke: {fileID: 0}
+  boostSmoke: {fileID: 0}
 --- !u!114 &4229053243368606208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,10 +165,7 @@ MonoBehaviour:
   boostAmount: 0
   boostAmountMax: 1000
   boostDecrease: 1
-  boostIncrease: 200
-  carController: {fileID: 4229053243368606223}
-  accFactorBoost: 100
-  maxSpeedBoost: 40
+  boostIncrease: 100
 --- !u!1 &4229053244089867725
 GameObject:
   m_ObjectHideFlags: 0
