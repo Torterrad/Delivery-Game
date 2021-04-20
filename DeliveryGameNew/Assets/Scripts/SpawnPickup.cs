@@ -27,6 +27,7 @@ public class SpawnPickup : MonoBehaviour
         {
             SpawnPickUp();
 
+            message.PrintPickUp();
 
             needAJob = false;
         }
@@ -34,7 +35,7 @@ public class SpawnPickup : MonoBehaviour
         {
             SpawnDropOff();
 
-            message.PrintJob();
+            message.PrintDropOff();
 
             needToDropOff = false;
         }
