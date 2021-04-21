@@ -80,11 +80,9 @@ public class GameoverScript : MonoBehaviour
     void CalculateTime(float Seconds)
     {
         float Minutes = Mathf.FloorToInt(Seconds / 60f);
+        Seconds = Mathf.FloorToInt(Seconds - Minutes * 60);
 
-        string mins = Minutes.ToString("f0");
-        string secs = Seconds.ToString("f0");
-
-        tempTime = string.Format("{00:00}:{1:00}", mins, secs);
+        tempTime = string.Format("{0:00}:{1:00}", Minutes, Seconds);
     }
 
     void HighScores()
