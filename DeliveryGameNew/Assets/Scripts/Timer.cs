@@ -13,12 +13,15 @@ public class Timer : MonoBehaviour
 
     public int ordersCompleted;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI Score;
 
     public GameObject Menus;
 
     // Update is called once per frame
     void Update()
     {
+        Score.text = ordersCompleted.ToString();
+
         if(timeAmount >= 0)
         {
             timeAmount -= Time.deltaTime;

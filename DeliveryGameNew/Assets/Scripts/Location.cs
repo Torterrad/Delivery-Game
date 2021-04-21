@@ -7,7 +7,6 @@ public class Location : MonoBehaviour
     public GameObject manager;
     public GameObject arrow;
     public GameObject pointsPopUp;
-    //public PointsPopUp pointsPopUp;
 
     void Start()
     {

@@ -14,12 +14,18 @@ public class KillPed : MonoBehaviour
     private float maxTimer = 2f;
     private float timer;
     bool dead = false;
+
+    public float penalty = -10f;
+    public GameObject lossPointsPopUp;
+
     void Start()
     {
         manager = GameObject.Find("GameManager");
         player = GameObject.FindGameObjectWithTag("Player");
         timer = maxTimer;
         rend = GetComponent<SpriteRenderer>();
+
+        lossPointsPopUp = GameObject.Find("LossPointsPopUp");
     }
     private void Update()
     {
@@ -36,16 +42,18 @@ public class KillPed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player"&& player.GetComponent<CarController>().speed>=5f)
+        if (other.tag == "Player" && player.GetComponent<CarController>().speed >= 5f)
         {
             blood.Play();
-            
+
             //manager.GetComponent<SpawnPickup>().needToDropOff = true;
-            manager.GetComponent<Timer>().timeAmount -= 10;
+            manager.GetComponent<Timer>().timeAmount += penalty;
             dead = true;
             //gameObject.SetActive(false);
             rend.enabled = false;
             collider.enabled = false;
+
+            lossPointsPopUp.GetComponent<LossPointsPopUp>().PopUp(penalty);
         }
     }
 }
