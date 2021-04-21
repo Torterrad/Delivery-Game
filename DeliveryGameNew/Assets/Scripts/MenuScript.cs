@@ -9,6 +9,8 @@ public class MenuScript : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject warning;
     public GameObject background;
+    public GameObject HUD;
+    public GameObject Logo;
     
 
     public bool paused = false;
@@ -27,9 +29,6 @@ public class MenuScript : MonoBehaviour
                 Pause();
             }
         }
-        
-        //IF player dead 
-        //gameover()
     }
 
     public void Pause()
@@ -37,9 +36,10 @@ public class MenuScript : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
+        
         background.SetActive(true);
-
-        //HUD.SetActive(false);
+        Logo.SetActive(true);
+        HUD.SetActive(false);
         //Disable HUD
     }
 
@@ -49,12 +49,10 @@ public class MenuScript : MonoBehaviour
         background.SetActive(false);
         pauseMenu.SetActive(false);
         warning.SetActive(false);
+
+        Logo.SetActive(false);
+        HUD.SetActive(true);
         Time.timeScale = 1;
-
-        //OptionsMenu.SetActive(false);
-        //Enable hud
-        //HUD.SetActive(true);
-
     }
 
     public void Retry()
@@ -64,9 +62,6 @@ public class MenuScript : MonoBehaviour
 
     public void gameOver()
     {
-        //get score
-
-        //HUD.SetActive(false);
         gameOverMenu.SetActive(true);
         Time.timeScale = 0;
     }
