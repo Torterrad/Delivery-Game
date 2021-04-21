@@ -9,9 +9,6 @@ public class GameoverScript : MonoBehaviour
     int score;
     float TimeinSeconds;
 
-    int PrevScore;
-    float PrevTime;
-
     float HighTime;
     int HighScore;
 
@@ -19,9 +16,10 @@ public class GameoverScript : MonoBehaviour
     string tempTime;
 
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI PscoreText;
     public TextMeshProUGUI TimeText;
-    public TextMeshProUGUI PTimeText;
+
+    public TextMeshProUGUI HighscoreText;
+    public TextMeshProUGUI HighTimeText;
 
     //UI Components
     public GameObject Background;
@@ -31,8 +29,6 @@ public class GameoverScript : MonoBehaviour
 
     public GameObject HiScore;
     public GameObject HiTime;
-    public GameObject HiPScore;
-    public GameObject HiPTime;
 
     //Script Components
     public GameObject GameHandler;
@@ -56,30 +52,22 @@ public class GameoverScript : MonoBehaviour
         Time.timeScale = 0f;
 
         scoreText.text = score.ToString();
-        PscoreText.text = PrevScore.ToString();
+
+        HighScores();
         Result.SetActive(true);
 
-        SetPrevious();
     }
 
     void GrabScores()
     {
         //Grab scores 
         score = GameHandler.GetComponent<Timer>().ordersCompleted;
-        //PrevScore = PlayerPrefs.GetInt("Score");
 
         //Calculate time
         CalculateTime(TimeinSeconds);
-        Debug.Log("tempTime");
         TimeText.text = tempTime;
 
-        CalculateTime(PrevTime);
-        Debug.Log("tempTime");
-        PTimeText.text = tempTime;
-
         //Set PlayerPrefs
-        //PrevScore = PlayerPrefs.SetInt("PrevScore", score);
-        //PrevTime
         //HighTime
         //HighScore
     }
@@ -94,37 +82,18 @@ public class GameoverScript : MonoBehaviour
         tempTime = string.Format("{0:0}:{1:00}", mins, secs); ; 
     }
 
-    void SetPrevious()
+    void HighScores()
     {
-        TimeinSeconds = PrevTime;
-        score = PrevScore;
-    }
-
-    //Bugged
-    /*void HighScores()
-    {
-        if (PrevScore > HighScore)
-        {
-            PrevScore = HighScore;
-            HiPScore.SetActive(true);
-        }
-
         if (score > HighScore)
         {
             score = HighScore;
             HiScore.SetActive(true);
         }
 
-        if (PrevTime > HighTime)
-        {
-            PrevTime = HighTime;
-            HiPTime.SetActive(true);
-        }
-
         if (TimeinSeconds > HighTime)
         {
             TimeinSeconds = HighTime;
+            HiTime.SetActive(true);
         }
     }
-    */
 }

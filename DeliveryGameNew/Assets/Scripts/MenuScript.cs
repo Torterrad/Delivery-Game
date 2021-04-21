@@ -11,14 +11,16 @@ public class MenuScript : MonoBehaviour
     public GameObject background;
     public GameObject HUD;
     public GameObject Logo;
-    
+
+    public GameObject GameHandler;
+
 
     public bool paused = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) /*and player isn't dead*/ )
+        if (Input.GetKeyDown(KeyCode.Escape) && (GameHandler.GetComponent<Timer>().timeAmount != 0))
         {
             if (paused)
             {
@@ -40,7 +42,6 @@ public class MenuScript : MonoBehaviour
         background.SetActive(true);
         Logo.SetActive(true);
         HUD.SetActive(false);
-        //Disable HUD
     }
 
     public void resume()
