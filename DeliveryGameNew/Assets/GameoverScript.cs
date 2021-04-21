@@ -58,6 +58,8 @@ public class GameoverScript : MonoBehaviour
         scoreText.text = score.ToString();
         PscoreText.text = PrevScore.ToString();
         Result.SetActive(true);
+
+        SetPrevious();
     }
 
     void GrabScores()
@@ -92,6 +94,12 @@ public class GameoverScript : MonoBehaviour
         tempTime = string.Format("{0:0}:{1:00}", mins, secs); ; 
     }
 
+    void SetPrevious()
+    {
+        TimeinSeconds = PrevTime;
+        score = PrevScore;
+    }
+
     //Bugged
     /*void HighScores()
     {
@@ -100,17 +108,20 @@ public class GameoverScript : MonoBehaviour
             PrevScore = HighScore;
             HiPScore.SetActive(true);
         }
-        else if (score > HighScore)
+
+        if (score > HighScore)
         {
             score = HighScore;
             HiScore.SetActive(true);
         }
+
         if (PrevTime > HighTime)
         {
             PrevTime = HighTime;
             HiPTime.SetActive(true);
         }
-        else if (TimeinSeconds > HighTime)
+
+        if (TimeinSeconds > HighTime)
         {
             TimeinSeconds = HighTime;
         }
