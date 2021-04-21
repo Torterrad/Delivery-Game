@@ -32,6 +32,12 @@ public class GameoverScript : MonoBehaviour
 
     //Script Components
     public GameObject GameHandler;
+
+    void Start()
+    {
+        HighScore = PlayerPrefs.GetInt("highScore");
+        HighTime = PlayerPrefs.GetFloat("highTime");
+    }
     
     public void Gameover()
     {
@@ -51,9 +57,9 @@ public class GameoverScript : MonoBehaviour
         GameOverMessage.SetActive(false);
         Time.timeScale = 0f;
 
-        //HighScores();
         Result.SetActive(true);
 
+        SaveScores();
     }
 
     void GrabScores()
@@ -61,6 +67,7 @@ public class GameoverScript : MonoBehaviour
         //Grab scores 
         score = GameHandler.GetComponent<Timer>().ordersCompleted;
 
+        HighScores();
         //Calculate time
         CalculateTime(TimeinSeconds);
         TimeText.text = tempTime;
@@ -70,35 +77,39 @@ public class GameoverScript : MonoBehaviour
 
         CalculateTime(HighTime);
         HighTimeText.text = tempTime;
-
-        //Set PlayerPrefs
-        //HighTime
-        //HighScore
     }
 
     void CalculateTime(float Seconds)
     {
         float Minutes = Mathf.FloorToInt(Seconds / 60f);
 
-        string mins = "0" + Minutes.ToString();
-        string secs = "0" + Seconds.ToString();
+        string mins = Minutes.ToString("f0");
+        string secs = Seconds.ToString("f0");
 
-        tempTime = string.Format("{0:00}:{1:00}", mins, secs);
+        tempTime = string.Format("{00:00}:{1:00}", mins, secs);
     }
 
     //Bugged
     void HighScores()
     {
-        if (score > HighScore)
+        if (score>HighScore)
         {
-            score = HighScore;
+            HighScore = score;
             HiScore.SetActive(true);
+            PlayerPrefs.SetInt("highScore", HighScore);
+
         }
 
-        if (TimeinSeconds > HighTime)
+        if (TimeinSeconds>HighTime)
         {
-            TimeinSeconds = HighTime;
+            HighTime = TimeinSeconds;
             HiTime.SetActive(true);
+            PlayerPrefs.SetFloat("highTime", HighTime);
         }
+    }
+
+    void SaveScores()
+    {
+
     }
 }
