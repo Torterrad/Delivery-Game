@@ -27,7 +27,7 @@ public class PointsPopUp : MonoBehaviour
         text.text = "+" + points.ToString();
 
         text.color = new Color(1f, 1f, 1f, 1f);
-        LeanTween.value(gameObject, setAlpha, 1f, 0f, 3f).setDelay(2f);
+        LeanTween.value(gameObject, setAlpha, 1f, 0f, 2f).setDelay(1f);
 
         rt.localScale = startScale * 0.9f;
         LeanTween.scale(rt, startScale * 1.2f, 0.4f).setEaseOutBack().setOnComplete(() => LeanTween.scale(rt, startScale, 1f).setEaseOutBack());
