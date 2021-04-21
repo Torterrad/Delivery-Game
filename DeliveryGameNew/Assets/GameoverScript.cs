@@ -51,9 +51,7 @@ public class GameoverScript : MonoBehaviour
         GameOverMessage.SetActive(false);
         Time.timeScale = 0f;
 
-        scoreText.text = score.ToString();
-
-        HighScores();
+        //HighScores();
         Result.SetActive(true);
 
     }
@@ -67,6 +65,12 @@ public class GameoverScript : MonoBehaviour
         CalculateTime(TimeinSeconds);
         TimeText.text = tempTime;
 
+        scoreText.text = score.ToString();
+        HighscoreText.text = HighScore.ToString();
+
+        CalculateTime(HighTime);
+        HighTimeText.text = tempTime;
+
         //Set PlayerPrefs
         //HighTime
         //HighScore
@@ -79,9 +83,10 @@ public class GameoverScript : MonoBehaviour
         string mins = "0" + Minutes.ToString();
         string secs = "0" + Seconds.ToString();
 
-        tempTime = string.Format("{0:0}:{1:00}", mins, secs); ; 
+        tempTime = string.Format("{0:00}:{1:00}", mins, secs);
     }
 
+    //Bugged
     void HighScores()
     {
         if (score > HighScore)
