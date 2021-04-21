@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4504678521178828617}
   - component: {fileID: 4504678521178828618}
   - component: {fileID: 5853177651021085420}
+  - component: {fileID: -6114881253971718956}
   m_Layer: 0
   m_Name: dropOffLoc
   m_TagString: Drop Off
@@ -50,7 +51,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,3 +126,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6114881253971718956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504678521178828619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2d1140413254847ba206b144d4dfdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleChange: 1.1
+  scaleTime: 1
+  rotateAngle: 360
+  rotateTime: 5

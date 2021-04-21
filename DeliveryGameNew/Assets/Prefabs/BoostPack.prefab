@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2646441094595411302}
   - component: {fileID: 1597993803421667044}
   - component: {fileID: 4185735422653154265}
+  - component: {fileID: -223599506201983699}
   m_Layer: 0
   m_Name: BoostPack
   m_TagString: BoostPack
@@ -109,3 +110,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-223599506201983699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017092789787108978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2d1140413254847ba206b144d4dfdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleChange: 1.2
+  scaleTime: 1
+  rotateAngle: 360
+  rotateTime: 5
