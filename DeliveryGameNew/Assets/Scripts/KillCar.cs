@@ -13,12 +13,18 @@ public class KillCar : MonoBehaviour
     private float maxTimer = 2f;
     private float timer;
     bool dead = false;
+
+    public float penalty = -20f;
+    public GameObject lossPointsPopUp;
+
     void Start()
     {
         manager = GameObject.Find("GameManager");
         player = GameObject.FindGameObjectWithTag("Player");
         timer = maxTimer;
         //rend = GetComponent<SpriteRenderer>();
+
+        lossPointsPopUp = GameObject.Find("LossPointsPopUp");
     }
 
     private void Update()
@@ -41,12 +47,13 @@ public class KillCar : MonoBehaviour
             //explosion.Play();
 
             //manager.GetComponent<SpawnPickup>().needToDropOff = true;
-            manager.GetComponent<Timer>().timeAmount -= 20;
+            manager.GetComponent<Timer>().timeAmount += penalty;
             dead = true;
             rend.SetActive(false);
             //rend.enabled = false;
             collider.enabled = false;
-            
+
+            lossPointsPopUp.GetComponent<LossPointsPopUp>().PopUp(penalty);
         }
         if (other.tag == "Player")
         {
