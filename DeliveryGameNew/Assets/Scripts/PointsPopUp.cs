@@ -10,8 +10,6 @@ public class PointsPopUp : MonoBehaviour
     RectTransform rt;
     Vector3 startScale;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
