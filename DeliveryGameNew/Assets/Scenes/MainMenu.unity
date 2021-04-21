@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 187986665}
   - component: {fileID: 187986664}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: ControlsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 193203296}
   - component: {fileID: 193203295}
   m_Layer: 5
-  m_Name: OptionsText
+  m_Name: ControlsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: options
+  m_text: How To Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: How To Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6c675e2b6f4794438794ff7deb97959, type: 2}
   m_sharedMaterial: {fileID: 2260721033807053643, guid: a6c675e2b6f4794438794ff7deb97959, type: 2}
@@ -2251,7 +2251,7 @@ GameObject:
   - component: {fileID: 1953830604}
   - component: {fileID: 1953830605}
   m_Layer: 5
-  m_Name: OPTIONS
+  m_Name: CONTROLSMENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
