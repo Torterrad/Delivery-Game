@@ -58,13 +58,8 @@ public class MenuScript : MonoBehaviour
 
     public void Retry()
     {
+        Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
-    }
-
-    public void gameOver()
-    {
-        gameOverMenu.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void MainMenu()

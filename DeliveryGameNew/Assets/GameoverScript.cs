@@ -58,8 +58,6 @@ public class GameoverScript : MonoBehaviour
         Time.timeScale = 0f;
 
         Result.SetActive(true);
-
-        SaveScores();
     }
 
     void GrabScores()
@@ -89,7 +87,6 @@ public class GameoverScript : MonoBehaviour
         tempTime = string.Format("{00:00}:{1:00}", mins, secs);
     }
 
-    //Bugged
     void HighScores()
     {
         if (score>HighScore)
@@ -106,10 +103,5 @@ public class GameoverScript : MonoBehaviour
             HiTime.SetActive(true);
             PlayerPrefs.SetFloat("highTime", HighTime);
         }
-    }
-
-    void SaveScores()
-    {
-
     }
 }
