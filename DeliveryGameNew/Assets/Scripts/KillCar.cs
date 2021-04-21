@@ -46,6 +46,13 @@ public class KillCar : MonoBehaviour
             rend.SetActive(false);
             //rend.enabled = false;
             collider.enabled = false;
+            
         }
+        if (other.tag == "Player")
+        {
+            CinemachineShake.Instance.ShakeCamera(4f, .2f);
+        }
+
+
     }
 }

@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 1841196031134340454}
   - component: {fileID: 5124233968429708490}
   - component: {fileID: 7404221322297876132}
+  - component: {fileID: 4823389075632108334}
+  - component: {fileID: 9171135230749886379}
   m_Layer: 0
   m_Name: AIPLACEHOLDER
   m_TagString: Untagged
@@ -198,6 +200,48 @@ MonoBehaviour:
   interpolatePathSwitches: 1
   switchPathInterpolationSpeed: 5
   targetCompatibility: {fileID: 0}
+--- !u!114 &4823389075632108334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841196031134340453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40d358e36e033043a7bea09394ace0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  holder: {fileID: 1841196031807970557}
+  rend: {fileID: 7404221322737460862}
+  collider: {fileID: 5124233968429708490}
+--- !u!61 &9171135230749886379
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841196031134340453}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0581074}
+  m_EdgeRadius: 0
 --- !u!1 &1841196031807970557
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841196031807970556}
   m_Layer: 0
-  m_Name: CarAITest
+  m_Name: PinkCarAi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
