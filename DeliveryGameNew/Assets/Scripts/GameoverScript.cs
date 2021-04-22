@@ -49,11 +49,12 @@ public class GameoverScript : MonoBehaviour
         Background.SetActive(true);
         GameOverMessage.SetActive(true);
         HUD.SetActive(false);
-        Invoke("Results", 0.1f);
+        StartCoroutine(Results());
     }
 
-    void Results()
+    IEnumerator Results()
     {
+        yield return new WaitForSeconds(0.1f);
         GameOverMessage.SetActive(false);
         Time.timeScale = 0f;
 
