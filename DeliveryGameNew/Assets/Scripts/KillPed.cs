@@ -35,6 +35,7 @@ public class KillPed : MonoBehaviour
         }
         if (timer <= 0)
         {
+            
             Destroy(gameObject);
             Destroy(holder);
         }
@@ -45,7 +46,8 @@ public class KillPed : MonoBehaviour
         if (other.tag == "Player" && player.GetComponent<CarController>().speed >= 5f)
         {
             blood.Play();
-
+            SoundManager.PlaySound("Scream");
+            SoundManager.PlaySound("CrashSound");
             //manager.GetComponent<SpawnPickup>().needToDropOff = true;
             manager.GetComponent<Timer>().timeAmount += penalty;
             dead = true;

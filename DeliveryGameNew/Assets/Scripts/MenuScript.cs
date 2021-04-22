@@ -24,10 +24,12 @@ public class MenuScript : MonoBehaviour
         {
             if (paused)
             {
+                SoundManager.PlaySound("UnPauseSound");
                 resume();
             }
             else
             {
+                SoundManager.PlaySound("PauseSound");
                 Pause();
             }
         }

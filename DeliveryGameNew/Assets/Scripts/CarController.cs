@@ -26,6 +26,7 @@ public class CarController : MonoBehaviour
     public float maxSpeedBoost = 40f;
     float accFactorStart;
     float maxSpeedStart;
+    public bool currentlyplaying;
 
 
     public ParticleSystem exhaustSmoke;
@@ -57,6 +58,8 @@ public class CarController : MonoBehaviour
             accFactor = accFactorBoost;
             maxSpeed = maxSpeedBoost;
         }
+        
+        
     }
 
     private void FixedUpdate()

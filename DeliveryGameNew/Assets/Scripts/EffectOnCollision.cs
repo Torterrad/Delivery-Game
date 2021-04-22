@@ -19,10 +19,12 @@ public class EffectOnCollision : MonoBehaviour
         {
             if (Player.GetComponent<CarController>().speed >= 5f&& Player.GetComponent<CarController>().speed < 10f)
             {
+                SoundManager.PlaySound("CrashSound");
                 CinemachineShake.Instance.ShakeCamera(5f, .2f);
             }
             if (Player.GetComponent<CarController>().speed >= 10f)
             {
+                SoundManager.PlaySound("CrashSound");
                 CinemachineShake.Instance.ShakeCamera(8f, .5f);
             }
 

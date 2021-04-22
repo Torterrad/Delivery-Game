@@ -21,6 +21,7 @@ public class Location : MonoBehaviour
     {
         if (this.tag == "Pick Up" && other.tag == "Player")
         {
+            SoundManager.PlaySound("CollectSound");
             manager.GetComponent<SpawnPickup>().needToDropOff = true;
 
             arrow.GetComponent<ArrowController>().lookingForPickup = false;
@@ -29,7 +30,7 @@ public class Location : MonoBehaviour
         }
         if (this.tag == "Drop Off" && other.tag == "Player")
         {
-
+            SoundManager.PlaySound("CollectSound");
             arrow.GetComponent<ArrowController>().lookingForDropOff = false;
             arrow.GetComponent<ArrowController>().lookingForPickup = true;
             if (manager.GetComponent<Timer>().amountOfTimeAdded <= manager.GetComponent<Timer>().amountOfTimeAddedLock)
