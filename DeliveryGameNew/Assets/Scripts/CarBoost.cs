@@ -31,6 +31,15 @@ public class CarBoost : MonoBehaviour
         {
             boostAmount = boostAmountMax;
         }
+        if ((Input.GetKeyDown(KeyCode.Space)) && (boostAmount >= boostDecrease))
+        {
+            accelerate.ChangePitchUp();
+        }
+        if ((Input.GetKeyUp(KeyCode.Space)) || boostAmount <= boostDecrease)
+        {
+            accelerate.ChangePitchDown();
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -15,7 +15,7 @@ public class BoostBar : MonoBehaviour
 
     public void SetBoost(float boost)
     {
-        SoundManager.PlaySound("MenuSound");
+        
         slider.value = boost;
     }
 }

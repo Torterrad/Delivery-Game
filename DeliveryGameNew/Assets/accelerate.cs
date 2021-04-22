@@ -25,15 +25,19 @@ public class accelerate : MonoBehaviour
             accelerateconstant.volume = 0.0f;
 
         }
-        if ((Input.GetKeyDown(KeyCode.Space)))
-        {
-            accelerateconstant.pitch = 1.5f;
-        }
-        if ((Input.GetKeyUp(KeyCode.Space)))
-        {
-            accelerateconstant.pitch = 1.0f;
+        
 
-        }
+    }
+    public static void ChangePitchUp()
+	{
+
+            accelerateconstant.pitch = 1.5f;
+      
+	}
+    public static void ChangePitchDown()
+    {
+
+        accelerateconstant.pitch = 1.0f;
 
     }
 }
