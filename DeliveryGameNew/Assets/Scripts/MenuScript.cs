@@ -60,12 +60,14 @@ public class MenuScript : MonoBehaviour
 
     public void Retry()
     {
+        SoundManager.PlaySound("MenuSound");
         Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
     public void MainMenu()
     {
+        SoundManager.PlaySound("MenuSound");
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

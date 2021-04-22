@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip Accelerate, CarHorn, CollectSound, CrashSound, MenuSound, PauseSound, UnPauseSound, SlowDown, Scream;
+    public static AudioClip Accelerate, CarHorn, CollectSound, CrashSound, MenuSound, PauseSound, UnPauseSound, SlowDown, Scream, Explosion;
     static AudioSource audioSrc;
     
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
         UnPauseSound = Resources.Load<AudioClip>("UnPause Sound");
         SlowDown = Resources.Load<AudioClip>("Slow down sound");
         Scream = Resources.Load<AudioClip>("Scream");
+        Explosion = Resources.Load<AudioClip>("Explosion");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -56,6 +57,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Scream":
                 audioSrc.PlayOneShot(Scream);
+                break;
+            case "Explosion":
+                audioSrc.PlayOneShot(Explosion);
                 break;
 
 

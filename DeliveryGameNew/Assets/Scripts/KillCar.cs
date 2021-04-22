@@ -45,7 +45,7 @@ public class KillCar : MonoBehaviour
         if (other.tag == "Player" && player.GetComponent<CarController>().speed >= 12f)
         {
             explosion.Play();
-
+            SoundManager.PlaySound("Explosion");
             //manager.GetComponent<SpawnPickup>().needToDropOff = true;
             manager.GetComponent<Timer>().timeAmount += penalty;
             dead = true;

@@ -33,6 +33,7 @@ public class BoostPackSpawner : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            SoundManager.PlaySound("MenuSound");
             noPack = true;
         }
         

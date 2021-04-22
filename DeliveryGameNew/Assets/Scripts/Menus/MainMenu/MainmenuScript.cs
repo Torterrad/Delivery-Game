@@ -16,13 +16,13 @@ public class MainmenuScript : MonoBehaviour
     }
     public void Play()
     {
-       
+        SoundManager.PlaySound("MenuSound");
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void Quit()
     {
-     
+        SoundManager.PlaySound("MenuSound");
         Application.Quit();
     }
 
